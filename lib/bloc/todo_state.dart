@@ -1,23 +1,30 @@
 part of 'todo_bloc.dart';
 
-sealed class TodoState {
+enum TodoStatus { init, loading, success, failed }
+
+class TodoState {
   final List<TodoModel> todos;
+  final TodoStatus status;
 
-  TodoState(this.todos);
+  const TodoState(this.todos, this.status);
 }
 
-final class TodoInitial extends TodoState {
-  TodoInitial(super.todos);
-}
+// final class TodoInitial extends TodoState {
+//   const TodoInitial(super.todos);
+// }
 
-final class TodoAdded extends TodoState {
-  TodoAdded(super.todos);
-}
+// final class TodoLoading extends TodoState {
+//   const TodoLoading(super.todos);
+// }
 
-final class TodoRemoved extends TodoState {
-  TodoRemoved(super.todos);
-}
+// final class TodoAdded extends TodoState {
+//   const TodoAdded(super.todos);
+// }
 
-final class TodoUpdated extends TodoState {
-  TodoUpdated(super.todos);
-}
+// final class TodoRemoved extends TodoState {
+//   const TodoRemoved(super.todos);
+// }
+
+// final class TodoUpdated extends TodoState {
+//   const TodoUpdated(super.todos);
+// }

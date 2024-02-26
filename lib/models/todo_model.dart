@@ -1,6 +1,6 @@
 class TodoModel {
-  String? title;
-  String? description;
+  final String title;
+  final String description;
 
-  TodoModel({this.title, this.description});
+  TodoModel(this.title, this.description);
 }
